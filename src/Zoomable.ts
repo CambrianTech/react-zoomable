@@ -1,3 +1,4 @@
+// @ts-ignore
 import {BrowserType, Client} from "react-client-info";
 
 export type ZoomableProperties = {
@@ -433,5 +434,4 @@ export function Zoomable(element:HTMLElement, settings?:ZoomableProperties) {
             moveElements()
         }, 500);
     }
-
 }
