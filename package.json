@@ -1,63 +1,47 @@
 {
-  "name": "home-harmony",
-  "version": "1.0.15",
-  "description": "Cambrian Home Harmony Web SDK",
+  "name": "react-zoomable-elements",
+  "version": "0.0.1",
+  "description": "Zoom or pan any element",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "style": "dist/styles.css",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm-run-all clean build:css build:js",
-    "build:css": "postcss src/styles.css --use autoprefixer -d dist/ --no-map",
+    "build": "npm-run-all clean build:js",
     "build:js": "rollup -c",
     "clean": "rimraf dist",
     "format": "prettier --write 'src/**/*' 'demo/src/**/*'",
     "prepare": "npm-run-all clean build",
-    "start": "npm-run-all --parallel start:css start:js",
-    "start:css": "postcss src/styles.css --use autoprefixer -d dist/ --no-map --watch",
+    "start": "npm-run-all --parallel start:js",
     "start:js": "rollup -c -w",
     "test": "jest --config jest.config.json --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CambrianTech/home-harmony-web.git"
+    "url": "git+https://github.com/CambrianTech/react-zoomable.git"
   },
   "keywords": [
-    "Home",
-    "Harmony",
-    "Augmented",
-    "Reality",
-    "DiY",
-    "flooring",
-    "paint",
-    "AR",
-    "deep",
-    "learning"
+    "Zoom",
+    "Pan"
   ],
   "author": "Cambrian",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CambrianTech/home-harmony-web/issues"
+    "url": "https://github.com/CambrianTech/react-zoomable/issues"
   },
-  "homepage": "https://github.com/CambrianTech/home-harmony-web#readme",
+  "homepage": "https://github.com/CambrianTech/react-zoomable#readme",
   "dependencies": {
-    "@researchgate/react-intersection-observer": "^1.0.1",
     "@types/node": "^12.11.1",
-    "@types/randomstring": "^1.1.6",
-    "react-three-fiber": "^3.0.2",
-    "three": "^0.109.0"
+    "react-client-info": "0.0.1"
   },
   "devDependencies": {
     "react": "^16.9",
     "react-dom": "^16.9",
     "@types/react": "^16.9",
     "@types/react-dom": "^16.9",
-    "autoprefixer": "^9.6.5",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.3",
     "rimraf": "^3.0.0",
     "rollup": "^1.24.0",
     "rollup-plugin-typescript2": "^0.24.3",

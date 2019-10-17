@@ -1,4 +1,4 @@
-import {BrowserType, Client} from "./WebClient";
+import {BrowserType, Client} from "react-client-info";
 
 export type ZoomableProperties = {
     canZoom?:boolean
