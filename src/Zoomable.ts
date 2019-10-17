@@ -1,4 +1,3 @@
-// @ts-ignore
 import {BrowserType, Client} from "react-client-info";
 
 export type ZoomableProperties = {

@@ -1,6 +1,6 @@
 {
   "name": "react-zoomable-elements",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Zoom or pan any element",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

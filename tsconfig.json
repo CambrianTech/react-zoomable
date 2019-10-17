@@ -3,15 +3,24 @@
     "declaration": true,
     "declarationDir": "dist",
     "esModuleInterop": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "esnext",
     "jsx": "react",
-    "lib": ["es2015", "dom"],
-    "module": "es6",
     "noImplicitAny": true,
     "outDir": "./dist",
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es5"
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noEmit": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
