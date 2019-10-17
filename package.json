@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/CambrianTech/react-zoomable#readme",
   "dependencies": {
-    "react-client-info": "0.0.2"
+    "react-client-info": "^0.0.2"
   },
   "devDependencies": {
     "react": "^16.9",
