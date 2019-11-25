@@ -1,6 +1,6 @@
 {
   "name": "react-zoomable-elements",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Zoom or pan any element",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/CambrianTech/react-zoomable#readme",
   "dependencies": {
-    "react-client-info": "^0.0.2"
+    "react-client-info": "^0.0.18"
   },
   "devDependencies": {
     "react": "^16.9",

@@ -1,4 +1,4 @@
-import {BrowserType, Client} from "react-client-info";
+import {BrowserProperties, BrowserType} from "react-client-info";
 
 export type ZoomableProperties = {
     canZoom?:boolean
@@ -66,13 +66,13 @@ function getState(element:HTMLElement):DerivedZoomableState  {
 
 }
 
-export function Zoomable(element:HTMLElement, settings?:ZoomableProperties) {
+export function Zoomable(element:HTMLElement, client:BrowserProperties, settings?:ZoomableProperties) {
 
     const props = settings ? settings : {};
     let zoomRate = 0.001;
-    if (Client.hasTouchpad || Client.isMobile) {
+    if (client.hasTouchpad || client.isMobile) {
         zoomRate = 0.01
-    } else if (Client.browser === BrowserType.Firefox) {
+    } else if (client.browser === BrowserType.Firefox) {
         zoomRate = 0.1
     }
     const maxScale = props.maxZoom ? props.maxZoom : 3.0;
@@ -101,13 +101,13 @@ export function Zoomable(element:HTMLElement, settings?:ZoomableProperties) {
     }
 
     //add event listeners
-    if (Client.isMobile) {
+    if (client.isMobile) {
         addEventListener(element,"touchstart", handleTouchStart);
         addEventListener(element,"touchmove", handleTouchMove);
         addEventListener(element,"touchend", handleTouchEnd)
     } else {
 
-        if (Client.hasGestureSupport) {
+        if (client.hasGestureSupport) {
             addEventListener(element, "gesturestart", handleGestureStart);
             addEventListener(element,"gesturechange", handleGestureChange);
             addEventListener(element,"gestureend", handleGestureEnd);
@@ -185,8 +185,8 @@ export function Zoomable(element:HTMLElement, settings?:ZoomableProperties) {
     function handleWheelEvent(e: WheelEvent) {
         e.preventDefault();
 
-        if (e.ctrlKey || !Client.hasGestureSupport) {
-            if (e.deltaY === 0 && e.deltaX === 0 && Client.browser === BrowserType.Chrome && Client.hasTouchpad) {
+        if (e.ctrlKey || !client.hasGestureSupport) {
+            if (e.deltaY === 0 && e.deltaX === 0 && client.browser === BrowserType.Chrome && client.hasTouchpad) {
                 twoFingerTap() //two finger tap works like this on mac trackpads in chrome
             } else {
                 state.scale = restrictScale(state.scale - e.deltaY * zoomRate);
